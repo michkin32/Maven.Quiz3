@@ -1,5 +1,6 @@
 package rocks.zipcode.io.quiz3.generics;
 
+import java.util.Arrays;
 import java.util.function.Function;
 
 /**
@@ -21,7 +22,7 @@ public class ArrayUtility<SomeType> {
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        return Math.toIntExact(Arrays.stream(array).filter(z -> z.equals(valueToEvaluate)).count());
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
